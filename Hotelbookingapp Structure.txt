@@ -1,0 +1,40 @@
+Hotel Booking System
+
+Build a hotel booking system using Spring Boot
+
+Workflow-
+
+POST /hotels/add → Add a hotel
+POST /hotels/{id}/rooms/add → Add rooms to that hotel
+POST /bookings/book/{roomId}?guestName="name" → Book a room
+GET /bookings → View all bookings
+DELETE /bookings/cancel/{bookingId} → Cancel a booking
+
+
+Structure-
+
+hotelbooking
+controller/     (Handles REST API endpoints)
+HotelController.java
+BookingController.java
+ model/  (Data models (entities))
+ Hotel.java
+Room.java
+Booking.java
+ repository/    (Interfaces for DB access)
+ HotelRepository.java
+RoomRepository.java
+BookingRepository.java
+HotelbookingApplication.java
+
+Entities:
+
+Hotel has many Rooms.
+Room belongs to a Hotel, and can be booked.
+Booking links a guest name to a booked Room.
+
+APIs:
+
+Add hotel ->Add rooms -> Book a room ->Cancel booking -> View bookings
+
+
